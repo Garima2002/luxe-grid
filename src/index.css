@@ -1,0 +1,66 @@
+:root {
+  --gold: #C6A75E;
+  --gold-d: #a8893a;
+  --ink: #111111;
+  --paper: #faf8f4;
+  --cream: #f0e8d8;
+  --muted: #888888;
+  --border: #e5ddd0;
+  --white: #ffffff;
+  --danger: #e05555;
+  --ok: #4caf81;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  /* prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  /* smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* prevent horizontal scroll */
+  overflow-x: hidden;
+}
+
+/* Remove blue flash on tap (iOS/Android) */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Make all buttons and inputs easier to tap on mobile */
+button, input, textarea, select {
+  touch-action: manipulation;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(110%); }
+  to   { transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes popIn {
+  0%  { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100%{ transform: scale(1);   opacity: 1; }
+}
+
+.au  { animation: fadeUp .5s ease both; }
+.au1 { animation: fadeUp .5s .1s ease both; }
+.au2 { animation: fadeUp .5s .2s ease both; }
+.au3 { animation: fadeUp .5s .3s ease both; }

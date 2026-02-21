@@ -1,0 +1,56 @@
+.orders-page { padding-top: 68px; min-height: 100vh; }
+.orders-wrap { padding: 72px 60px; }
+.orders-header { margin-bottom: 48px; }
+.orders-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.orders-title { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,4vw,46px); font-weight:300; }
+
+.orders-empty { text-align:center; padding:80px 20px; color:var(--muted); }
+.orders-empty-icon { font-size:48px; margin-bottom:16px; }
+.orders-empty-title { font-family:'Cormorant Garamond',serif; font-size:22px; margin-bottom:8px; color:var(--ink); }
+.orders-empty-sub { font-size:14px; }
+
+.orders-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.orders-table { width:100%; border-collapse:collapse; min-width: 560px; }
+.orders-table th { text-align:left; padding:11px 14px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); border-bottom:2px solid var(--border); }
+.orders-table td { padding:15px 14px; border-bottom:1px solid var(--border); font-size:13px; vertical-align:top; }
+.orders-table tr:hover td { background:var(--paper); }
+
+.order-num { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; }
+.order-date { white-space:nowrap; color:var(--muted); font-size:12px; }
+.order-items { display:flex; flex-direction:column; gap:3px; }
+.order-phone { font-size:11px; color:var(--muted); }
+.order-total { font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--gold); font-weight:600; white-space:nowrap; }
+
+.order-status { display:inline-block; padding:4px 10px; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; border-radius:2px; }
+.st-pending   { background:#fff3cd; color:#856404; }
+.st-confirmed { background:#d1e7dd; color:#0f5132; }
+.st-shipped   { background:#cfe2ff; color:#084298; }
+.st-delivered { background:#d1e7dd; color:#0f5132; }
+
+/* ── Mobile card layout — much easier to read than scrolling table ── */
+.order-card { display:none; }
+
+@media (max-width: 768px) {
+  .orders-wrap { padding: 48px 18px; }
+  .orders-header { margin-bottom: 32px; }
+  /* Hide table on mobile */
+  .orders-table-wrap { display: none; }
+  /* Show cards instead */
+  .order-card {
+    display: block;
+    border: 1px solid var(--border);
+    padding: 18px;
+    margin-bottom: 14px;
+    background: white;
+  }
+  .order-card-row { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
+  .order-card-id { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; }
+  .order-card-date { font-size:11px; color:var(--muted); }
+  .order-card-items { font-size:13px; color:#444; margin-bottom:10px; line-height:1.6; }
+  .order-card-footer { display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid var(--border); }
+  .order-card-total { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--gold); font-weight:600; }
+}
+
+@media (max-width: 375px) {
+  .orders-wrap { padding: 36px 14px; }
+}

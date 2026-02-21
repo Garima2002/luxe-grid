@@ -1,0 +1,70 @@
+.detail-page { padding-top: 68px; min-height: 100vh; }
+
+.detail-back-bar { padding: 18px 40px; border-bottom: 1px solid var(--border); }
+.back-btn {
+  background: none; border: 1.5px solid var(--border);
+  padding: 8px 18px; cursor: pointer; font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); transition: border-color 0.2s;
+}
+.back-btn:hover { border-color: var(--ink); }
+
+/* Desktop: side by side */
+.detail-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 110px); }
+
+.detail-images {
+  background: var(--cream);
+  position: sticky; top: 68px;
+  height: calc(100vh - 68px);
+  overflow: hidden;
+}
+.detail-main-img { width:100%; height:calc(100% - 100px); object-fit:cover; display:block; }
+.detail-thumbs { display:flex; height:100px; overflow-x:auto; }
+.detail-thumb { flex:0 0 100px; height:100px; object-fit:cover; cursor:pointer; border:3px solid transparent; transition:border-color .2s; }
+.detail-thumb.active { border-color: var(--gold); }
+
+.detail-info { padding: 52px 48px; display:flex; flex-direction:column; gap:22px; }
+.detail-brand { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.detail-name { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,50px); font-weight:300; line-height:1.1; }
+.detail-price { font-size:26px; color:var(--gold); font-weight:500; }
+.detail-divider { border:none; border-top:1px solid var(--border); }
+.detail-desc { color:#555; line-height:1.85; font-size:15px; }
+
+.qty-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
+.qty-control { display:flex; align-items:center; border:1px solid var(--border); width:fit-content; }
+.qty-btn { width:44px; height:44px; background:none; border:none; cursor:pointer; font-size:20px; transition:background .2s; font-family:'Jost',sans-serif; }
+.qty-btn:hover { background:var(--cream); }
+.qty-val { width:52px; height:44px; text-align:center; border-left:1px solid var(--border); border-right:1px solid var(--border); font-size:16px; line-height:44px; }
+
+.detail-actions { display:flex; flex-direction:column; gap:10px; }
+.detail-add-btn { width:100%; padding:14px; background:var(--gold); color:white; border:none; cursor:pointer; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:500; transition:background .2s; }
+.detail-add-btn:hover { background:var(--gold-d); }
+.detail-wa-btn { width:100%; padding:13px; background:#25D366; color:white; text-align:center; text-decoration:none; display:block; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; transition:background .2s; }
+.detail-wa-btn:hover { background:#1da851; }
+
+.oos-label { font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; }
+.detail-perks { list-style:none; font-size:12px; color:var(--muted); line-height:1.9; }
+
+/* ── TABLET (768px) ── */
+@media (max-width: 768px) {
+  .detail-back-bar { padding: 14px 20px; }
+  .detail-inner { grid-template-columns: 1fr; }
+  /* Image becomes a square at top */
+  .detail-images { position: relative; top: 0; height: auto; }
+  .detail-main-img { height: 80vw; max-height: 420px; }
+  .detail-thumbs { height: 80px; }
+  .detail-thumb { flex: 0 0 80px; height: 80px; }
+  .detail-info { padding: 28px 20px; gap: 18px; }
+  .detail-price { font-size: 22px; }
+  /* Make action buttons full width and bigger touch targets */
+  .qty-btn { width: 52px; height: 52px; font-size: 22px; }
+  .qty-val { width: 56px; height: 52px; line-height: 52px; }
+  .detail-add-btn { padding: 16px; font-size: 12px; }
+  .detail-wa-btn { padding: 16px; font-size: 12px; }
+}
+
+/* ── SMALL PHONE (375px) ── */
+@media (max-width: 375px) {
+  .detail-main-img { height: 90vw; }
+  .detail-info { padding: 22px 14px; }
+  .detail-name { font-size: 26px; }
+}

@@ -1,0 +1,39 @@
+.login-page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: #080808;
+  padding: 20px;
+}
+.login-box {
+  width: 100%; max-width: 370px;
+  padding: 40px 32px;
+  background: #111; border: 1px solid #1e1e1e;
+}
+.login-logo { text-align:center; margin-bottom:26px; }
+.login-logo img { height:46px; object-fit:contain; filter:brightness(0) invert(1); }
+.login-title { font-family:'Cormorant Garamond',serif; font-size:26px; color:white; text-align:center; margin-bottom:6px; }
+.login-sub { text-align:center; color:#444; font-size:12px; margin-bottom:26px; }
+.login-error { color:#e05555; font-size:12px; text-align:center; padding:9px; background:rgba(224,85,85,.08); border:1px solid rgba(224,85,85,.15); margin-bottom:14px; }
+.login-field { display:flex; flex-direction:column; gap:5px; margin-bottom:18px; }
+.login-label { font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:#444; }
+.login-input {
+  background:#0a0a0a; border:1px solid #252525; color:white;
+  padding:14px; font-family:'Jost',sans-serif;
+  font-size:16px; /* prevents iOS zoom */
+  outline:none; transition:border-color .2s;
+  -webkit-appearance:none;
+}
+.login-input:focus { border-color:#C6A75E; }
+.login-btn {
+  width:100%; padding:15px;
+  background:#C6A75E; color:white; border:none;
+  cursor:pointer; font-family:'Jost',sans-serif;
+  font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:500;
+  transition:background .2s; -webkit-tap-highlight-color:transparent;
+}
+.login-btn:hover, .login-btn:active { background:#a8893a; }
+
+@media (max-width: 375px) {
+  .login-box { padding: 32px 20px; }
+  .login-title { font-size: 22px; }
+}
