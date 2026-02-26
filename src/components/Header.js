@@ -26,7 +26,9 @@ export default function Header({ setPage, cartCount, openCart, isAdmin, onAdminC
       {isAdmin && <span className="admin-badge">Admin</span>}
       <button className="nav-link" onClick={() => go('home')}>Home</button>
       <button className="nav-link" onClick={goShop}>Shop</button>
-      <button className="nav-link" onClick={() => go('orders')}>My Orders</button>
+      {isAdmin &&<button className="nav-link" onClick={() => go('orders')}>My Orders</button>}
+
+      {/* <button className="nav-link" onClick={() => go('orders')}>My Orders</button> */}
       <button className="nav-link" onClick={() => { onAdminClick(); setMenuOpen(false); }}>
         {isAdmin ? 'Exit Admin' : 'Admin'}
       </button>
